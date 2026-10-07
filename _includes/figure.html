@@ -1,0 +1,12 @@
+{% comment %}
+  Inline image inside a trip report.
+  Usage: {% include figure.html src="day1.jpg" caption="Camp at the lake" %}
+  `src` is relative to the trip's image folder (page.image_dir).
+{% endcomment %}
+{% assign dir = include.dir | default: page.image_dir %}
+<figure class="inline-figure">
+  <a href="{{ dir | append: '/' | append: include.src | relative_url }}" class="lightbox-link" data-caption="{{ include.caption }}">
+    <img src="{{ dir | append: '/' | append: include.src | relative_url }}" alt="{{ include.caption | default: page.title }}" loading="lazy">
+  </a>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

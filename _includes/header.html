@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <ul>
+      {% for item in site.nav %}
+        {% assign active = false %}
+        {% if item.url == '/' and page.url == '/' %}{% assign active = true %}
+        {% elsif item.url != '/' and page.url contains item.url %}{% assign active = true %}{% endif %}
+        <li><a href="{{ item.url | relative_url }}"{% if active %} class="active"{% endif %}>{{ item.title }}</a></li>
+      {% endfor %}
+      <li><a href="{{ '/files/cv.pdf' | relative_url }}" target="_blank">CV</a></li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,49 @@
+---
+layout: default
+---
+{% assign dir = page.image_dir %}
+<article class="trip">
+  {% if page.cover %}
+  <div class="trip-hero" style="background-image: url('{{ dir | append: '/' | append: page.cover | relative_url }}');">
+    <div class="trip-hero-text">
+      <h1>{{ page.title }}</h1>
+      {% if page.location %}<p>{{ page.location }}</p>{% endif %}
+    </div>
+  </div>
+  {% else %}
+  <h1 class="page-title">{{ page.title }}</h1>
+  {% endif %}
+
+  <ul class="trip-stats">
+    <li><span>Date</span>{{ page.date | date: "%B %-d, %Y" }}{% if page.end_date %} – {{ page.end_date | date: "%B %-d, %Y" }}{% endif %}</li>
+    {% if page.activity %}<li><span>Activity</span>{{ page.activity }}</li>{% endif %}
+    {% if page.distance %}<li><span>Distance</span>{{ page.distance }}</li>{% endif %}
+    {% if page.elevation_gain %}<li><span>Elevation Gain</span>{{ page.elevation_gain }}</li>{% endif %}
+    {% if page.high_point %}<li><span>High Point</span>{{ page.high_point }}</li>{% endif %}
+    {% if page.partners %}<li><span>Partners</span>{{ page.partners }}</li>{% endif %}
+  </ul>
+
+  <div class="trip-body">
+    {{ content }}
+  </div>
+
+  {% if page.gallery %}
+  <h2>Gallery</h2>
+  <div class="gallery">
+    {% for img in page.gallery %}
+    <figure>
+      <a href="{{ dir | append: '/' | append: img.file | relative_url }}" class="lightbox-link" data-caption="{{ img.caption }}">
+        <img src="{{ dir | append: '/' | append: img.file | relative_url }}" alt="{{ img.caption | default: page.title }}" loading="lazy">
+      </a>
+      {% if img.caption %}<figcaption>{{ img.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <nav class="trip-nav">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ '/trips/' | relative_url }}">All Trips</a>
+    {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>

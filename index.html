@@ -1,0 +1,40 @@
+---
+layout: default
+title: About
+---
+<section class="hero">
+  <img src="{{ '/images/profile.jpg' | relative_url }}" alt="Photo of Jayden P. Grunde" class="profile">
+  <div>
+    <h1>Jayden P. Grunde</h1>
+    <p class="subtitle">First-Year Ph.D. Student, Materials Science and Engineering<br>Colorado School of Mines</p>
+    <p>
+      I am a first-year graduate student advised by
+      <a href="#">Steven R. Spurgeon</a>. My research interests include
+      <strong>topic one</strong>, <strong>topic two</strong>, and <strong>topic three</strong>.
+      Before graduate school, I received my B.S. in mechanical engineering from Oregon State University.
+    </p>
+    <p class="links">
+      <a href="mailto:jayden_grunde@mines.edu">Email</a> ·
+      <a href="https://github.com/yourusername">GitHub</a> ·
+      <a href="https://scholar.google.com/citations?user=t5sM8eYAAAAJ&hl=en&oi=ao">Google Scholar</a> ·
+      <a href="https://www.linkedin.com/in/jayden-grunde">LinkedIn</a>
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>News</h2>
+  <ul class="news">
+    <li><span>Aug 2026</span> Started my graduate program at Colorado School of Mines!</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Latest Trip Reports</h2>
+  <div class="trip-grid">
+    {% assign recent = site.trips | sort: "date" | reverse %}
+    {% for trip in recent limit: 3 %}
+      {% include trip-card.html trip=trip %}
+    {% endfor %}
+  </div>
+</section>

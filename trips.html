@@ -1,0 +1,17 @@
+---
+layout: page
+title: Trip Reports
+permalink: /trips/
+---
+<p>Reports from outdoor expeditions — climbing, backpacking, skiing, and more.</p>
+
+{% assign trips = site.trips | sort: "date" | reverse %}
+{% assign years = trips | group_by_exp: "t", "t.date | date: '%Y'" %}
+{% for year in years %}
+  <h2>{{ year.name }}</h2>
+  <div class="trip-grid">
+    {% for trip in year.items %}
+      {% include trip-card.html trip=trip %}
+    {% endfor %}
+  </div>
+{% endfor %}

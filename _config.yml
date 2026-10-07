@@ -1,0 +1,41 @@
+title: Jayden P. Grunde
+description: Personal website of Jayden P. Grunde, Ph.D. student at Colorado School of Mines.
+author: Jayden P. Grunde
+email: jayden_grunde@mines.edu
+
+# For a user site (yourusername.github.io) leave baseurl empty.
+# For a project site (github.com/you/website) set baseurl: "/website"
+baseurl: ""
+url: ""
+
+markdown: kramdown
+
+collections:
+  trips:
+    output: true
+    permalink: /trips/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: trips
+    values:
+      layout: trip
+
+# Navigation menu (order matters)
+nav:
+  - title: About
+    url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Teaching
+    url: /teaching/
+  - title: Trip Reports
+    url: /trips/
+  - title: Contact
+    url: /contact/
+
+exclude:
+  - README.md

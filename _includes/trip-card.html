@@ -1,0 +1,11 @@
+{% assign t = include.trip %}
+<a class="trip-card" href="{{ t.url | relative_url }}">
+  {% if t.cover %}
+  <img src="{{ t.image_dir | append: '/' | append: t.cover | relative_url }}" alt="{{ t.title }}" loading="lazy">
+  {% endif %}
+  <div class="trip-card-body">
+    <h3>{{ t.title }}</h3>
+    <p class="meta">{{ t.date | date: "%b %Y" }}{% if t.location %} · {{ t.location }}{% endif %}</p>
+    {% if t.summary %}<p>{{ t.summary }}</p>{% endif %}
+  </div>
+</a>
