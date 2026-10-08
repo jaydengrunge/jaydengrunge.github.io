@@ -1,11 +1,11 @@
 ---
-title: Longs Peak via the Keyhole Route
+title: Mt. Stuart Complete North Ridge
 date: 2025-08-16
 end_date: 2025-08-17           # optional
 location: Alpine Lakes Wilderness, WA
 activity: Alpine Climb / Backpacking
 distance: 14.5 mi
-elevation_gain: 5,100 ft
+elevation_gain: 7,500 ft
 time: 28 hr                     # optional total time
 high_point: 14,259 ft
 partners: Malone Lehew, Martin Hankins
@@ -20,7 +20,7 @@ segments:
   - name: Climb
     distance: 
     time: 7 hr
-    elevation_gain: 1,200 ft
+    elevation_gain: 3,000 ft
   - name: Descent
     distance: 7 mi
     time: 6 hr
