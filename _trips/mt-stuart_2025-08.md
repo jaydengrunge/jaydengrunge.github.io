@@ -7,7 +7,7 @@ activity: Alpine Climb / Backpacking
 distance: 14.5 mi
 elevation_gain: 7,500 ft
 time: 28 hr                     # optional total time
-high_point: 14,259 ft
+high_point: 9,415 ft
 partners: Malone Lehew, Martin Hankins
 summary: A two day push up one of the best alpine climbs in the country.
 
