@@ -27,7 +27,7 @@ layout: default
   {% if page.segments %}
   <table class="trip-segments">
     <thead>
-      <tr><th></th><th>Distance</th><th>Time</th><th>Elevation Gain</th></tr>
+      <tr><th></th><th>Distance</th><th>Time</th><th>Elevation Gain</th><th>Elevation Loss</th></tr>
     </thead>
     <tbody>
       {% for s in page.segments %}
@@ -36,6 +36,7 @@ layout: default
         <td>{{ s.distance | default: "–" }}</td>
         <td>{{ s.time | default: "–" }}</td>
         <td>{{ s.elevation_gain | default: "–" }}</td>
+        <td>{{ s.elevation_loss | default: "–" }}</td>
       </tr>
       {% endfor %}
     </tbody>
