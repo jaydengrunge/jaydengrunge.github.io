@@ -104,6 +104,18 @@ nav ul a.active, nav ul a:hover { color: var(--accent); }
   letter-spacing: 0.05em; color: var(--muted);
 }
 
+.trip-segments {
+  width: 100%; border-collapse: collapse; margin: -0.5rem 0 1.5rem;
+  background: var(--card); border-radius: 8px; overflow: hidden;
+}
+.trip-segments th, .trip-segments td { padding: 0.5rem 1rem; text-align: left; }
+.trip-segments thead th {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted); font-weight: normal; border-bottom: 1px solid #e3e7ee;
+}
+.trip-segments tbody th { font-weight: 600; }
+.trip-segments tbody tr + tr { border-top: 1px solid #eef1f5; }
+
 .inline-figure { margin: 1.5rem 0; }
 .inline-figure img { width: 100%; border-radius: 8px; display: block; }
 figcaption { color: var(--muted); font-size: 0.88rem; text-align: center; margin-top: 0.4rem; }
